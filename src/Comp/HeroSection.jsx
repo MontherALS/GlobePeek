@@ -1,4 +1,4 @@
-export default function ImgSection() {
+export default function HeroSection() {
   return (
     <section className=" mt-16 relative w-[50vw] hover:scale-105 duration-500  bg-gradient-to-br from-[#14213d] to-[#3d5a80] text-white p-10 rounded-2xl shadow-lg overflow-hidden">
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm z-0"></div>

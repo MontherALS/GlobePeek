@@ -46,7 +46,7 @@ export default function CountryTable({
                   src={country.flags.png}
                   alt=""
                 />
-                <span className="font-mono text-sm md:text-lg lg:text-2xl">
+                <span className="font-light font-Crimson text-sm md:text-lg lg:text-2xl">
                   {country.name.common}
                 </span>
               </td>
