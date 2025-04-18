@@ -4,8 +4,7 @@
 
 @import "tailwindcss";
 .shadow-top-bottom {
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1),
-    /* فوق */ 0 4px 8px rgba(0, 0, 0, 0.1); /* تحت */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 @theme {
   --font-Crimson: "Crimson Text", "serif";

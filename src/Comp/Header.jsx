@@ -7,7 +7,7 @@ export default function Header({}) {
   return (
     <header
       className="flex flex-col items-center w-full lg:flex-row lg:justify-around
-    bg-gradient-to-r from-[#646c81] via-[#cec9d2] to-[#24355b] overflow-hidden"
+    bg-gradient-to-r from-[#646c81] via-[#878688] to-[#24355b] overflow-hidden"
     >
       <div>
         <h1
