@@ -16,4 +16,4 @@ GlobePeek is a web app that lets users explore information about countries aroun
 - Clean dark theme with modern gradients
 
 ## 🔗 Live Demo:
-[https://globepeekproj.netlify.app](https://globepeekproj.netlify.app)
+[Click here to view the site](https://globepeekproj.netlify.app)
