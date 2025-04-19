@@ -19,7 +19,7 @@ function App() {
     getCountrys();
   }, []);
 
-  //! dsadsadsadsad
+  
   const visibleCountries =
     selectedRegion == "ALL"
       ? allCountries
