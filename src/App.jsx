@@ -18,6 +18,8 @@ function App() {
     }
     getCountrys();
   }, []);
+
+  //! dsadsadsadsad
   const visibleCountries =
     selectedRegion == "ALL"
       ? allCountries
@@ -32,7 +34,7 @@ function App() {
       <main
         className=" 
       
-      w-full max-w-screen-lg mx-auto   sm:px-6 md:px-10 flex flex-col items-center justify-center"
+      w-full max-w-screen-lg mx-auto  sm:px-6 md:px-10 flex flex-col items-center justify-center"
       >
         <HeroSection />
         <ContinentsSelect

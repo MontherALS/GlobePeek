@@ -25,7 +25,7 @@ export default function CountryTable({
             </th>
             <th>Region</th>
             <th>Area</th>
-            <th> Population</th>
+            <th>Population</th>
           </tr>
         </thead>
       ) : null}
@@ -46,7 +46,7 @@ export default function CountryTable({
                   src={country.flags.png}
                   alt=""
                 />
-                <span className="font-light font-Crimson text-sm md:text-lg lg:text-2xl">
+                <span className="font-light  text-sm md:text-lg lg:text-2xl">
                   {country.name.common}
                 </span>
               </td>
