@@ -22,7 +22,7 @@ function App() {
     selectedRegion == "ALL"
       ? allCountries
       : allCountries.filter((cou) => cou.continents.includes(selectedRegion));
-  console.log(typeof countrySelected.population);
+
   return (
     <>
       <Header

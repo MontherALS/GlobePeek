@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import CountryTable from "./CountryTable";
-export default function SelectCountry({
+export default function ContinentsSelect({
   visibleCountries,
   setAllCountries,
   setCountrySelected,
