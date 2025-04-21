@@ -13,10 +13,12 @@
 }
 body {
   margin: 0px;
+  background-color: rgb(123, 122, 122);
+  /* 
   background-color: #e4e4e6;
   background-image: url("/bgimg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
 }
