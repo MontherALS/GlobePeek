@@ -1,6 +1,4 @@
-import {useRoutes,Link} from "react-router-dom"; 
 import App from "../App.jsx"
-import Details from "../Pages/Details.jsx";
 export default function CountryTable({
   visibleCountries,
   setCountrySelected,
@@ -11,11 +9,11 @@ export default function CountryTable({
     "text-gray-200 transition hover:scale-105 duration-300  bg-gradient-to-br from-[#1c2945]/55 to-[#637481]/22 backdrop-blur-3xl hover:bg-[#d7dbff] text-center cursor-pointer";
   const countrysAttruputeStyle = " px-3 py-3 md:text-lg text-sm";
   
-  const routes = [
+  // const routes = [
 
-    {path: "/",element:<App/> }
-    ,{path: "/details" ,element:<Details/>}
-  ]
+  //   {path: "/",element:<App/> }
+  //   ,{path: "/details" ,element:<Details/>}
+  // ]
   
   return (
     <table className=" mt-3 border-2 w-full border-none  ">
