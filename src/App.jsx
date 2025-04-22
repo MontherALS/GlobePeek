@@ -6,7 +6,7 @@ import CountryDetails from "./Comp/CountryDetails";
 
 function App() {
   const [allCountries, setAllCountries] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("ALL");
   const [countrySelected, setCountrySelected] = useState("");
   useEffect(() => {
     async function getCountrys() {

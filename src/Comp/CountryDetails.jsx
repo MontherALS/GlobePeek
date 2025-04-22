@@ -3,9 +3,9 @@ export default function CountryDetails({ countrySelected }) {
 
   const basicStyle = `text-xl md:text-2xl font-mono text-shadow-1xs p-1 
   font hover:text-2xl md:hover:text-3xl hover:shadow-2xl hover:bg-[#1c2945] duration-500 `;
-  const sectionStyle = ` transition-opacity duration-500  w-80 sm:w-100 md:w-160 lg:w-200
+  const sectionStyle = ` transition-opacity duration-500  w-55 sm:w-100 md:w-75 lg:w-155
   flex justify-center items-center flex-col gap-7 rounded-2xl p-7 
-  shadow-top-bottom mb-20 mt-20 bg-gradient-to-bl   from-[#cec9d2] to-[#7b7ba4]`;
+  shadow-top-bottom mb-5 mt-5 bg-gradient-to-bl   from-[#cec9d2] to-[#7b7ba4]`;
   return (
     <section id="couSec" className={sectionStyle}>
       <div className="flex justify-center items-center mt-5 gap-10  ">
@@ -24,7 +24,7 @@ export default function CountryDetails({ countrySelected }) {
                     transition ease-in-out "
         />
       </div>
-      <div className=" text-gray-100">
+      <div className=" text-gray-100 ">
         <span className="text-center text-black">
           <h2 className="text-3xl md:text-5xl font-Special-Gothic font-bold">
             Basic information{" "}
@@ -44,7 +44,7 @@ export default function CountryDetails({ countrySelected }) {
       </div>
       <div className="">
         <button
-          className="w-70 h-15 rounded-2xl text-center font-bold hover:scale-110 hover:shadow-1xs duration-300
+          className="w-40 sm:w-55 h-15 rounded-2xl text-center font-bold hover:scale-110 hover:shadow-1xs duration-300
          bg-[#14213d]  text-gray-100 text-2xl hover:bg-[#09113b]  cursor-pointer"
           onClick={() => window.open(countrySelected.maps.googleMaps)}
         >
@@ -59,7 +59,7 @@ export default function CountryDetails({ countrySelected }) {
           el.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Go Up 🡱
+        Go back
       </button>
     </section>
   );

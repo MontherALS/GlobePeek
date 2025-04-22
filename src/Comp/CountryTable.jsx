@@ -60,7 +60,13 @@ export default function CountryTable({
                 {(country.population / 1_000_000).toFixed(1)}M
               </td>
               <td>
-                <Link to={"/countryDetails"}>Click </Link>
+                <Link
+                  to={"/country"}
+                  state={country}
+                  className="px-4 py-1 rounded-lg text-sm font-semibold bg-[#475b77] hover:bg-blue-600 text-white shadow hover:scale-105 transition duration-200"
+                >
+                  Click{" "}
+                </Link>
               </td>
             </tr>
           );

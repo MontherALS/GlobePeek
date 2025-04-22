@@ -12,8 +12,13 @@
   --font-Special-Gothic: "Special Gothic Expanded One", "sans-serif";
 }
 body {
-  margin: 0px;
-  background-color: rgb(123, 122, 122);
+  background: linear-gradient(145deg, #0f172a, #1e293b, #334155);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
   /* 
   background-color: #e4e4e6;
   background-image: url("/bgimg.jpg");
