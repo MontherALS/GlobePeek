@@ -43,12 +43,6 @@ export default function CountryDetailsPage({ countrySelected }) {
             <div className={labelStyle}>Subregion:</div>
             <div className={valueStyle}>{countrySelected.subregion}</div>
           </div>
-          <div>
-            <div className={labelStyle}>Population:</div>
-            <div className={valueStyle}>
-              {(countrySelected.population / 1_000_000).toFixed(1)} M
-            </div>
-          </div>
         </div>
       </div>
 
