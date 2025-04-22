@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Header({}) {
   const navLinkStyle =
     "hover:scale-105 hover:text-2xl hover:underline duration-150 text-shadow-2xs cursor-pointer hover:text-blue-800";
