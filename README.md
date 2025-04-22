@@ -14,3 +14,5 @@ GlobePeek is a web application that provides information about countries worldwi
 - Vite
 - Tailwind CSS
 
+## 🔗 Live Demo:
+ [Click here to view the site](https://globepeekproj.netlify.app)
