@@ -39,19 +39,3 @@ export async function fetcchPopulationData(countryCode) {
   }
   return values;
 }
-
-export async function fetchTechnologyData(countryCode) {
-  const indicators = [
-    "SP.POP.SCIE.RD.P6", // Researchers in R&D (per million people)
-    "GB.XPD.RSDV.GD.ZS", // R&D expenditure (% of GDP)
-  ];
-  const values = [];
-  for (const code of indicators) {
-    const res = await fetch(
-      `https://api.worldbank.org/v2/country/${countryCode}/indicator/${code}?format=json`
-    );
-    const data = await res.json();
-    values.push(data[1]?.[1]?.value);
-  }
-  return values;
-}

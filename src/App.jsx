@@ -35,7 +35,6 @@ function App() {
           setAllCountries={setAllCountries}
           selectedRegion={selectedRegion}
         />
-        <CountryDetails countrySelected={countrySelected} />
       </main>
     </>
   );

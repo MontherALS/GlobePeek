@@ -1,10 +1,10 @@
 export default function CountryDetails({ countrySelected }) {
   if (!countrySelected) return null;
 
-  const basicStyle = `text-xl md:text-2xl font-mono text-shadow-1xs p-1 
+  const basicStyle = `text-xl md:text-2xl font-mono text-shadow-1xs p-1
   font hover:text-2xl md:hover:text-3xl hover:shadow-2xl hover:bg-[#1c2945] duration-500 `;
   const sectionStyle = ` transition-opacity duration-500  w-55 sm:w-100 md:w-75 lg:w-155
-  flex justify-center items-center flex-col gap-7 rounded-2xl p-7 
+  flex justify-center items-center flex-col gap-7 rounded-2xl p-7
   shadow-top-bottom mb-5 mt-5 bg-gradient-to-bl   from-[#cec9d2] to-[#7b7ba4]`;
   return (
     <section id="couSec" className={sectionStyle}>
@@ -20,7 +20,7 @@ export default function CountryDetails({ countrySelected }) {
             countrySelected !== "" ? countrySelected.coatOfArms.png : undefined
           }
           alt=""
-          className="max-w-20 sm:max-w-30 md:max-w-40    hover:-rotate-7 hover:scale-110 duration-1000 
+          className="max-w-20 sm:max-w-30 md:max-w-40    hover:-rotate-7 hover:scale-110 duration-1000
                     transition ease-in-out "
         />
       </div>
@@ -37,9 +37,6 @@ export default function CountryDetails({ countrySelected }) {
             Continent: {countrySelected.continents}
           </h3>
           <h3 className={basicStyle}>Subregion: {countrySelected.subregion}</h3>
-          <h3 className={basicStyle}>
-            Population: {(countrySelected.population / 1000000).toFixed(1)}M
-          </h3>
         </div>
       </div>
       <div className="">

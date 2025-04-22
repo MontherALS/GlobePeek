@@ -39,7 +39,7 @@ export default function ContinentsSelect({
         ].map((region) => (
           <button
             key={region}
-            className="hover:scale-105 duration-150 text-shadow-2xs cursor-pointer"
+            className="hover:scale-105 sm:text-[25px] duration-150 text-shadow-2xs cursor-pointer"
             name={region}
             onClick={handleSelectRegion}
           >

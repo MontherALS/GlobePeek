@@ -8,7 +8,7 @@ export default function HeroSection() {
           Explore the World
         </h1>
         <p className="text-lg md:text-xl text-gray-200">
-          Discover, learn, and see new countrys
+          Discover, learn, and see new countries
         </p>
       </div>
     </section>

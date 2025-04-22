@@ -44,9 +44,6 @@ export default function CountryDetailsPage({ countrySelected }) {
             <div className={valueStyle}>{countrySelected.subregion}</div>
           </div>
         </div>
-      </div>
-
-      <div className="flex flex-col items-center gap-3 mt-5">
         <button
           onClick={() => window.open(countrySelected.maps.googleMaps)}
           className="bg-[#1e2941] text-white text-xl font-semibold px-6 py-3 rounded-xl hover:bg-[#0b162c] transition duration-300 shadow hover:scale-105"
