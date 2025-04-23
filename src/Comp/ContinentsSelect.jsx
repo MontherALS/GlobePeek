@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import CountryTable from "./CountryTable";
+import { continentSelect } from "../Styles/Styles";
 export default function ContinentsSelect({
   visibleCountries,
   setAllCountries,
@@ -22,12 +23,9 @@ export default function ContinentsSelect({
     }
   }, [countrySelected]);
 
-  const navStyle =
-    "flex flex-wrap justify-center gap-2 p-4 sm:p-6 text-sm sm:text-lg lg:text-xl xl:text-2xl xl:gap-10 rounded-xl bg-white/25 hover:bg-white/77 shadow-xl hover:scale-102 duration-700 max-w-full ";
-
   return (
-    <section className="flex flex-col justify-around items-center mt-16">
-      <nav className={navStyle} id="countryNav">
+    <section className={continentSelect.section}>
+      <nav className={continentSelect.navStyle} id="countryNav">
         {[
           "ALL",
           "Asia",
@@ -39,7 +37,7 @@ export default function ContinentsSelect({
         ].map((region) => (
           <button
             key={region}
-            className="hover:scale-105 sm:text-[25px] duration-150 text-shadow-2xs cursor-pointer"
+            className={continentSelect.button}
             name={region}
             onClick={handleSelectRegion}
           >

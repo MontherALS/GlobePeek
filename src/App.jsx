@@ -2,8 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import HeroSection from "./Comp/HeroSection";
 import ContinentsSelect from "./Comp/ContinentsSelect";
-import CountryDetails from "./Comp/CountryDetails";
-// TODO ADD LOADING FOR API FETCHING..
+
 function App() {
   const [allCountries, setAllCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("ALL");

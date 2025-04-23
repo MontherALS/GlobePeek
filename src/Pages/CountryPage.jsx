@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import CountryDetailsPage from "../Comp/CountryDetailsPage";
+import { countryPage } from "../Styles/Styles";
 import {
   fetchEconomyData,
   fetcchPopulationData,
@@ -75,13 +76,13 @@ export default function CountryPage() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-        <div className="text-2xl font-mono animate-pulse">Loading data...</div>
+      <main className={countryPage.loadingContainer}>
+        <div className={countryPage.loadingText}>Loading data...</div>
       </main>
     );
   }
   return (
-    <main className="grid grid-cols-1 sm:grid-cols-2 grid-rows-[auto_auto_auto_auto_auto] gap-4 p-6 min-h-screen bg-gray-800">
+    <main className={countryPage.main}>
       <div className="col-span-1 row-span-3">
         <CountryDetailsPage countrySelected={country} />
       </div>
@@ -92,10 +93,7 @@ export default function CountryPage() {
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {countryData.economy.map((value, i) => (
-            <div
-              key={i}
-              className="bg-gradient-to-bl from-[#a2a0c2] to-[#7b7ba4] rounded-2xl shadow-md p-3 text-white"
-            >
+            <div key={i} className={countryPage.economyMapDiv}>
               <span
                 className={
                   value < 0
@@ -117,11 +115,14 @@ export default function CountryPage() {
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {countryData.population.map((value, i) => (
-            <div
-              key={i}
-              className="bg-gradient-to-bl from-[#66ad72] to-[#68688c] rounded-2xl  shadow-md p-3 text-white"
-            >
-              <span className="block text-lg sm:text-3xl font-semibold ">
+            <div key={i} className={countryPage.populationMapDiv}>
+              <span
+                className={
+                  value < 0
+                    ? "block text-lg sm:text-3xl font-mono text-red-700"
+                    : "block text-lg sm:text-3xl font-mono text-white"
+                }
+              >
                 {formatNumber(value)}
               </span>
               <span className="text-sm opacity-80">{populationLabels[i]}</span>
