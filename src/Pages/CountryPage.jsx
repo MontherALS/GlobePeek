@@ -1,27 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import CountryDetailsPage from "../Comp/CountryDetailsPage";
-import { countryPage } from "../Styles/Styles";
+import { countryPageStyle } from "../Styles/Style";
 import {
   fetchEconomyData,
-  fetcchPopulationData,
+  fetchPopulationData,
 } from "../assets/fetchEconomyData";
-
-const economyLabels = [
-  "Total GDP (current US$)",
-  "GDP per capita (current US$)",
-  "GDP growth (annual %)",
-  "Inflation rate (CPI, annual %)",
-  "Foreign direct investment (current US$)",
-  "External debt stocks (current US$)",
-];
-
-const populationLabels = [
-  "Total population",
-  "Population growth (annual %)",
-  "Population density (per sq. km)",
-  "Urban population (% of total)",
-];
+import { economyLabels, populationLabels } from "../assets/countryPageLabels";
 
 function formatNumber(value) {
   if (value === null || value === undefined || isNaN(value)) return "N/D";
@@ -40,7 +25,12 @@ export default function CountryPage() {
   const location = useLocation();
   const country = location.state;
 
-  //!Check for country
+  const [countryData, setCountryData] = useState({
+    economy: [],
+    population: [],
+  });
+
+  const [isLoading, setIsLoading] = useState(true);
   if (!country) {
     return (
       <div className="text-center text-white mt-10">
@@ -48,18 +38,12 @@ export default function CountryPage() {
       </div>
     );
   }
-  const [countryData, setCountryData] = useState({
-    economy: [],
-    population: [],
-  });
-
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     async function loadLocal() {
       try {
         setIsLoading(true);
         const EconomyData = await fetchEconomyData(country.cca2);
-        const PopulationData = await fetcchPopulationData(country.cca2);
+        const PopulationData = await fetchPopulationData(country.cca2);
 
         setCountryData({
           economy: EconomyData,
@@ -76,15 +60,15 @@ export default function CountryPage() {
 
   if (isLoading) {
     return (
-      <main className={countryPage.loadingContainer}>
-        <div className={countryPage.loadingText}>Loading data...</div>
+      <main className={countryPageStyle.loadingContainer}>
+        <div className={countryPageStyle.loadingText}>Loading data...</div>
       </main>
     );
   }
   return (
-    <main className={countryPage.main}>
+    <main className={countryPageStyle.main}>
       <div className="col-span-1 row-span-3">
-        <CountryDetailsPage countrySelected={country} />
+        <CountryDetailsPage countryBasicInfo={country} />
       </div>
 
       <div className="col-span-1 row-span-1">
@@ -93,7 +77,7 @@ export default function CountryPage() {
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {countryData.economy.map((value, i) => (
-            <div key={i} className={countryPage.economyMapDiv}>
+            <div key={i} className={countryPageStyle.economyMapDiv}>
               <span
                 className={
                   value < 0
@@ -115,7 +99,7 @@ export default function CountryPage() {
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {countryData.population.map((value, i) => (
-            <div key={i} className={countryPage.populationMapDiv}>
+            <div key={i} className={countryPageStyle.populationMapDiv}>
               <span
                 className={
                   value < 0

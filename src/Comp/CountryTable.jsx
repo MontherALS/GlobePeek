@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import { countryTable } from "../Styles/Styles";
-export default function CountryTable({
-  visibleCountries,
-  selectedRegion,
-  setAllCountries,
-}) {
+import { countryTableStyle } from "../Styles/Style";
+import { useContext } from "react";
+import { CountriesDataCtx } from "../Store/country-data-context";
+export default function CountryTable({}) {
+  const { setAllCountries, visibleCountries, selectedRegion } =
+    useContext(CountriesDataCtx);
   return (
-    <table className={countryTable.container}>
+    <table className={countryTableStyle.container}>
       {selectedRegion ? (
         <thead>
-          <tr className={countryTable.headerRow}>
+          <tr className={countryTableStyle.headerRow}>
             <th
-              className={countryTable.headerCell}
+              className={countryTableStyle.headerCell}
               onClick={() => {
                 const sortedName = [...visibleCountries].sort((a, b) => {
                   return a.name.common.localeCompare(b.name.common);
@@ -31,28 +31,28 @@ export default function CountryTable({
       <tbody>
         {visibleCountries.map((country, i) => {
           return (
-            <tr key={i} className={countryTable.countryStyle}>
-              <td className={countryTable.bodyCell}>
+            <tr key={i} className={countryTableStyle.countryStyle}>
+              <td className={countryTableStyle.bodyCell}>
                 <img
-                  className={countryTable.flagimg}
+                  className={countryTableStyle.flagimg}
                   src={country.flags.png}
                   alt=""
                 />
-                <span className={countryTable.countryNameSpan}>
+                <span className={countryTableStyle.countryNameSpan}>
                   {country.name.common}
                 </span>
               </td>
-              <td className={countryTable.countrysAttruputeStyle}>
+              <td className={countryTableStyle.countriesAttributeStyle}>
                 {country.region}
               </td>
-              <td className={countryTable.countrysAttruputeStyle}>
+              <td className={countryTableStyle.countriesAttributeStyle}>
                 {country.area.toLocaleString()} Km²
               </td>
               <td>
                 <Link
                   to={"/country"}
                   state={country}
-                  className={countryTable.linkStyle}
+                  className={countryTableStyle.linkStyle}
                 >
                   Click{" "}
                 </Link>

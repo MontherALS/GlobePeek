@@ -22,7 +22,7 @@ export async function fetchEconomyData(countryCode) {
   return values;
 }
 
-export async function fetcchPopulationData(countryCode) {
+export async function fetchPopulationData(countryCode) {
   const indicators = [
     "SP.POP.TOTL", // Total population
     "SP.POP.GROW", // Population growth (annual %)

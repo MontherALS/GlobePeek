@@ -1,14 +1,10 @@
 import { NavLink, Link } from "react-router-dom";
-import { headerStyle } from "../Styles/Styles";
+import { headerStyle } from "../Styles/Style";
 export default function Header({}) {
   return (
-    <header
-      className="flex flex-col items-center w-full lg:flex-row lg:justify-around
-    bg-gradient-to-r from-[#646c81] via-[#878688] to-[#24355b]  overflow-hidden"
-    >
+    <header className={headerStyle.header}>
       <div>
         <h1 className={headerStyle.titleStyle}>
-          {" "}
           <Link to={"/"}>GlobePeek</Link>
         </h1>
       </div>

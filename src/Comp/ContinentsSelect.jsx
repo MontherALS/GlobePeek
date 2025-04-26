@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import CountryTable from "./CountryTable";
-import { continentSelect } from "../Styles/Styles";
-export default function ContinentsSelect({
-  visibleCountries,
-  setAllCountries,
-  setCountrySelected,
-  countrySelected,
-  setSelectedRegion,
-  selectedRegion,
-}) {
+
+import { continentSelectStyle } from "../Styles/Style";
+import { CountriesDataCtx } from "../Store/country-data-context";
+import { useContext } from "react";
+export default function ContinentsSelect() {
+  const { setCountrySelected, countrySelected, setSelectedRegion } =
+    useContext(CountriesDataCtx);
   function handleSelectRegion(e) {
     const el = document.getElementById("countryNav");
     el.scrollIntoView({ behavior: "smooth" });
@@ -18,14 +15,14 @@ export default function ContinentsSelect({
 
   useEffect(() => {
     if (countrySelected) {
-      const el = document.getElementById("couSec");
+      const el = document.getElementById("country-section");
       el.scrollIntoView({ behavior: "smooth" });
     }
   }, [countrySelected]);
 
   return (
-    <section className={continentSelect.section}>
-      <nav className={continentSelect.navStyle} id="countryNav">
+    <section className={continentSelectStyle.section}>
+      <nav className={continentSelectStyle.navStyle} id="countryNav">
         {[
           "ALL",
           "Asia",
@@ -37,7 +34,7 @@ export default function ContinentsSelect({
         ].map((region) => (
           <button
             key={region}
-            className={continentSelect.button}
+            className={continentSelectStyle.button}
             name={region}
             onClick={handleSelectRegion}
           >
@@ -45,12 +42,6 @@ export default function ContinentsSelect({
           </button>
         ))}
       </nav>
-      <CountryTable
-        visibleCountries={visibleCountries}
-        setCountrySelected={setCountrySelected}
-        selectedRegion={selectedRegion}
-        setAllCountries={setAllCountries}
-      />
     </section>
   );
 }

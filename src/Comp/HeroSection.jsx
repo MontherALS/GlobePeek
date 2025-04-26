@@ -1,10 +1,12 @@
 export default function HeroSection() {
+  const sectionStyle =
+    " mt-16 relative w-[50vw] hover:scale-105 duration-500  bg-gradient-to-br from-[#14213d] to-[#3d5a80] text-white p-10 rounded-2xl shadow-lg overflow-hidden";
   return (
-    <section className=" mt-16 relative w-[50vw] hover:scale-105 duration-500  bg-gradient-to-br from-[#14213d] to-[#3d5a80] text-white p-10 rounded-2xl shadow-lg overflow-hidden">
+    <section className={sectionStyle}>
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm z-0"></div>
 
       <div className="relative z-10 text-center">
-        <h1 className="text-2xl md:text-6xl font-title mb-4 text0c">
+        <h1 className="text-2xl md:text-6xl font-title mb-4 ">
           Explore the World
         </h1>
         <p className="text-lg md:text-xl text-gray-200">

@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import { footer } from "../Styles/Styles";
+import { footerStyle } from "../Styles/Style";
 export default function RootLayout() {
   return (
     <>
       <Header />
 
       <Outlet />
-      <footer className={footer.container}>
+      <footer className={footerStyle.container}>
         <p className="text-sm">Made by MontherALS</p>
       </footer>
     </>
